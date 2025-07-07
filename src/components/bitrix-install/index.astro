@@ -6,9 +6,14 @@
         const script = document.createElement('script');
         script.src = '//api.bitrix24.com/api/v1/';
         script.async = true;
-        document.head.appendChild(script);
-        BX24.init(function(){
-            BX24.installFinish();
-        });
+        script.onload = function() {
+            if (typeof BX24 !== 'undefined') {
+                BX24.init(function(){
+                    BX24.installFinish();
+                });
+            } else {
+                console.error('Bitrix24 скрипт не загружен');
+            }
+        };
     </script>
 </div>
