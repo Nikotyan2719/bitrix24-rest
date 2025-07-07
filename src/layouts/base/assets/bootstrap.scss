@@ -1,0 +1,9 @@
+// Переопределение переменных до использования Bootstrap
+$primary: #ff5733;
+$body-bg: #f8f9fa;
+
+// Затем подключаем Bootstrap
+@use "bootstrap/scss/bootstrap" with (
+  $primary: $primary,
+  $body-bg: $body-bg,
+);

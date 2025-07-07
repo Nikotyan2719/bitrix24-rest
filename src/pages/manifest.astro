@@ -1,0 +1,14 @@
+---
+import { map } from "es-toolkit/compat";
+import Layout from "../layouts/base/index.astro";
+const pages = import.meta.glob("/src/pages/**/*.astro", { eager: true });
+const items = map(Object.entries(pages), ([item]) => {
+  const base = item.replace("/src/pages", "");
+  return { url: base.replace(/(index)?\.astro/, ""), title: base };
+});
+---
+<Layout title="Содержание">
+  <ul class="grid gap-2 py-3">
+    {map((items), ({ url, title }) => (<li class="px-2"><a href={url}>{title}</a></li>))}
+  </ul>
+</Layout>

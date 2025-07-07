@@ -1,0 +1,14 @@
+---
+---
+
+<div class="bitrix-install">
+    <script is:inline>
+        const script = document.createElement('script');
+        script.src = '//api.bitrix24.com/api/v1/';
+        script.async = true;
+        document.head.appendChild(script);
+        BX24.init(function(){
+            BX24.installFinish();
+        });
+    </script>
+</div>

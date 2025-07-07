@@ -1,0 +1,20 @@
+---
+// Front‑matter можно использовать для данных или импортов
+const icons = ["-", "+"];
+const { value } = Astro.props;
+---
+
+<div class="counter" x-data={`{ count: ${value} }`}>
+  <div class="flex items-center">
+    <button class="bg-amber-300 hover:bg-amber-400 py-3 px-4 cursor-pointer" @click="count--">{icons[0]}</button>
+    <label class="block">
+      <input name="count" type="text" class="text-center h-full py-3 focus:outline-none" x-model="count" />
+    </label>
+    <button class="bg-amber-300 hover:bg-amber-400 py-3 px-4 cursor-pointer" @click="count++">{icons[1]}</button>
+  </div>
+  <div class="text-center">
+    <slot />
+  </div>
+</div>
+
+<style lang="scss"></style>
