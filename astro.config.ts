@@ -8,6 +8,7 @@ import merged from "./integrations/merged";
 // https://docs.astro.build/en/guides/environment-variables/#in-the-astro-config-file
 const env = loadEnv(String(process.env.NODE_ENV), process.cwd(), "");
 export default defineConfig({
+  //base: '/app_local/ef889a49d12c5a74747ba32225342b84',
   server: {
     host: env.VITE_HOST || "0.0.0.0",
     port: Number(env.VITE_PORT || 3000),

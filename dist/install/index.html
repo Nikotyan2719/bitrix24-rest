@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="generator" content="Astro v5.10.1">
     <title>BitrixInstall</title>
-    <link rel="stylesheet" href="/_astro/style.css">
-    <script type="module" src="/_astro/app.js"></script>
-  </head>
-
+  <link rel="stylesheet" href="/_astro/style.css"><script type="module" src="/_astro/app.js"></script></head>
   <body>
-
-    <div class="bitrix-install">
-      <script>
+    
+  <div class="bitrix-install">
+    <script>
         const script = document.createElement('script');
         script.src = '//api.bitrix24.com/api/v1/';
         script.async = true;
         script.onload = function() {
-          if (typeof BX24 !== 'undefined') {
-            BX24.init(function() {
-              BX24.installFinish();
-            });
-          } else {
-            console.error('Bitrix24 скрипт не загружен');
-          }
+            if (typeof BX24 !== 'undefined') {
+                BX24.init(function(){
+                    BX24.installFinish();
+                });
+            } else {
+                console.error('Bitrix24 скрипт не загружен');
+            }
         };
         document.head.appendChild(script);
-      </script>
-    </div>
+    </script>
+</div>
 
-  </body>
-
-</html>
+  </body></html>
