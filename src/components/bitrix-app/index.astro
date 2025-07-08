@@ -17,6 +17,7 @@ const BITRIX24_WEBHOOK = 'https://b24-1aju79.bitrix24.ru/rest/1/u3dtj4pacn8odm62
                         <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="checkUserAccess()">Проверить права пользователя</button>
                         <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getAvailableMethods()">Получить доступные методы</button>
                         <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getChats()">Получить список чатов</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="addBlogPost()">Добавить сообщение в блог</button>
                     </div>
                 </div>
                 <div>
@@ -98,6 +99,20 @@ async function checkUserAccess() {
             hasAccess: accessResult.result
         };
         displayRestResult('Права пользователя', result);
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
+
+async function addBlogPost() {
+    try {
+        const params = {
+            POST_TITLE: 'Заголовок',
+            POST_MESSAGE: 'Текст',
+            DEST: ['SG1', 'U2']
+        };
+        const result = await callBitrixAPI('log.blogpost.add', params);
+        displayRestResult('Результат добавления сообщения', result);
     } catch (error) {
         displayRestError(error.message);
     }
