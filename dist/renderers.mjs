@@ -1866,45 +1866,54 @@ var __defProp = Object.defineProperty;
 var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(raw || cooked.slice()) }));
 var _a;
 const $$Index$1 = createComponent(async ($$result, $$props, $$slots) => {
-  return renderTemplate(_a || (_a = __template(["", `<div class="app astro-6d4s3iun">
-    <h2 class="astro-6d4s3iun">\u0421\u0440\u0430\u0432\u043D\u0435\u043D\u0438\u0435 API Bitrix24</h2>
+  return renderTemplate(_a || (_a = __template(["", `<div class="app">
+    <h1 class="text-center text-3xl font-bold">API Bitrix24 & SDK</h1>
 
-    <div class="sdk-result astro-6d4s3iun">
-        <h3 class="astro-6d4s3iun">\u041F\u0440\u0438\u043C\u0435\u0440 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F SDK</h3>
-        <div id="sdkResult" class="astro-6d4s3iun"></div>
-    </div>
-
-    <div class="rest-result astro-6d4s3iun">
-        <h3 class="astro-6d4s3iun">\u041F\u0440\u0438\u043C\u0435\u0440 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F REST API</h3>
-        <div class="astro-6d4s3iun">
-            <button onclick="getProfile()" class="astro-6d4s3iun">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F</button>
-            <button onclick="getAppInfo()" class="astro-6d4s3iun">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0438</button>
+    <div class="flex flex-col gap-12">
+        <div class="m-5">
+            <h2 class="text-2xl mb-3">\u041F\u0440\u0438\u043C\u0435\u0440 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F REST API</h2>
+            <div class="grid grid-cols-3 gap-3 mb-12">
+                <div>
+                    <h3 class="text-2xl mb-3">\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0438\u043D\u043E\u0444\u0440\u043C\u0430\u0446\u0438\u0438</h3>
+                    <div class="flex flex-col gap-3 items-start">
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getProfile()">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getAppInfo()">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0438</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="checkUserAccess()">\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u043F\u0440\u0430\u0432\u0430 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getAvailableMethods()">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B\u0435 \u043C\u0435\u0442\u043E\u0434\u044B</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getChats()">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0441\u043F\u0438\u0441\u043E\u043A \u0447\u0430\u0442\u043E\u0432</button>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl mb-3">\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u044F \u0441\u043E \u0441\u0434\u0435\u043B\u043A\u0430\u043C\u0438</h3>
+                    <div class="flex flex-col gap-3 items-start">
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="createDeal()">\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0441\u0434\u0435\u043B\u043A\u0443</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getDeals()">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0441\u043F\u0438\u0441\u043E\u043A \u0441\u0434\u0435\u043B\u043E\u043A</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="deleteDeal()">\u0423\u0434\u0430\u043B\u0438\u0442\u044C \u0441\u0434\u0435\u043B\u043A\u0443</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-red-300 font-bold cursor-pointer" onclick="deleteAllDeals()">\u0423\u0434\u0430\u043B\u0438\u0442\u044C \u0412\u0421\u0415 \u0441\u0434\u0435\u043B\u043A\u0438</button>
+                    </div>
+                </div>
+            </div>
+            <div id="restResult" class="result my-2.5 p-2.5 border rounded-sm border-gray-500 overflow-hidden"></div>
         </div>
-        <div id="restResult" class="result astro-6d4s3iun"></div>
+        <div class="m-5">
+            <h2 class="text-2xl">\u041F\u0440\u0438\u043C\u0435\u0440 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F SDK</h2>
+            <div id="sdkResult"></div>
+        </div>
     </div>
 </div>
 
 
-
-<!-- \u041F\u043E\u0434\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435 Bitrix24 SDK -->
 <script>
-// \u041F\u043E\u0434\u043A\u043B\u044E\u0447\u0430\u0435\u043C \u0432\u043D\u0435\u0448\u043D\u0438\u0439 \u0441\u043A\u0440\u0438\u043F\u0442
-const script = document.createElement('script');
-script.src = '//api.bitrix24.com/api/v1/';
-script.async = true;
-document.head.appendChild(script);
-
-// \u0424\u0443\u043D\u043A\u0446\u0438\u0438 \u0434\u043B\u044F REST API
 async function callBitrixAPI(method, params = {}) {
     try {
         const response = await fetch(\`https://b24-1aju79.bitrix24.ru/rest/1/u3dtj4pacn8odm62/\${method}\`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
-            body: new URLSearchParams(params)
+            body: JSON.stringify(params)
         });
-
         const result = await response.json();
         if (result.error) {
             throw new Error(result.error_description || result.error);
@@ -1918,11 +1927,7 @@ async function callBitrixAPI(method, params = {}) {
 
 function displayRestResult(title, data) {
     const restResult = document.getElementById('restResult');
-    if (Array.isArray(data)) {
-        restResult.innerHTML = \`<h4>\${title}</h4><pre>\${JSON.stringify(data, null, 2)}</pre>\`;
-    } else {
-        restResult.innerHTML = \`<h4>\${title}</h4><pre>\${JSON.stringify(data, null, 2)}</pre>\`;
-    }
+    restResult.innerHTML = \`<h4>\${title}</h4><pre>\${JSON.stringify(data, null, 2)}</pre>\`;
 }
 
 function displayRestError(message) {
@@ -1930,10 +1935,9 @@ function displayRestError(message) {
     restResult.innerHTML = \`<div style="color: red;">\u041E\u0448\u0438\u0431\u043A\u0430: \${message}</div>\`;
 }
 
-// \u041C\u0435\u0442\u043E\u0434\u044B REST API
 async function getProfile() {
     try {
-        const result = await callBitrixAPI('profile', {});
+        const result = await callBitrixAPI('profile');
         displayRestResult('\u041F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F', result.result);
     } catch (error) {
         displayRestError(error.message);
@@ -1942,77 +1946,194 @@ async function getProfile() {
 
 async function getAppInfo() {
     try {
-        const result = await callBitrixAPI('app.info', {});
+        const result = await callBitrixAPI('app.info');
         displayRestResult('\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0438', result.result);
     } catch (error) {
         displayRestError(error.message);
     }
 }
 
-// \u0418\u043D\u0438\u0446\u0438\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u044F SDK
-BX24.init(function(){
-    // \u041F\u0440\u0438\u043C\u0435\u0440 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F SDK
-    BX24.callMethod('app.info', {}, function(res){
-        if (res.error()) {
-            console.error('\u041E\u0448\u0438\u0431\u043A\u0430 SDK:', res.error());
-        } else {
-            const sdkResult = document.getElementById('sdkResult');
-            const data = res.data();
-            sdkResult.innerHTML = \`
-                <h4>\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0438 (SDK)</h4>
-                <div>ID \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u044F: \${data.ID}</div>
-                <div>\u041A\u043E\u0434: \${data.CODE}</div>
-                <div>\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u043E: \${data.INSTALLED ? '\u0414\u0430' : '\u041D\u0435\u0442'}</div>
-                <div>\u041B\u0438\u0446\u0435\u043D\u0437\u0438\u044F: \${data.LICENSE}</div>
-                <div>\u0422\u0438\u043F \u043B\u0438\u0446\u0435\u043D\u0437\u0438\u0438: \${data.LICENSE_TYPE}</div>
-                <div>\u0414\u043D\u0435\u0439 \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C: \${data.DAYS}</div>
-                <div>\u0421\u0442\u0430\u0442\u0443\u0441: \${data.STATUS}</div>
-                <div>\u0412\u0435\u0440\u0441\u0438\u044F: \${data.VERSION}</div>
-            \`;
+async function checkUserAccess() {
+    try {
+        const adminResult = await callBitrixAPI('user.admin');
+        const accessResult = await callBitrixAPI('user.access');
+        const result = {
+            isAdmin: adminResult.result,
+            hasAccess: accessResult.result
+        };
+        displayRestResult('\u041F\u0440\u0430\u0432\u0430 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F', result);
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
+
+async function getAvailableMethods() {
+    try {
+        const result = await callBitrixAPI('methods');
+        displayRestResult('\u0414\u043E\u0441\u0442\u0443\u043F\u043D\u044B\u0435 \u043C\u0435\u0442\u043E\u0434\u044B', result.result);
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
+
+
+async function createDeal() {
+    try {
+        const dealParams = {
+            fields: {
+                TITLE: '\u041D\u043E\u0432\u0430\u044F \u0441\u0434\u0435\u043B\u043A\u0430',
+                STAGE_ID: 'NEW',
+                OPPORTUNITY: 10000,
+                CURRENCY_ID: 'RUB'
+            }
+        };
+        const result = await callBitrixAPI('crm.deal.add', dealParams);
+        displayRestResult('\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0441\u0434\u0435\u043B\u043A\u0438', result);
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
+async function getDeals() {
+    try {
+        const result = await callBitrixAPI('crm.deal.list', {
+            select: ['ID', 'TITLE', 'STAGE_ID', 'OPPORTUNITY', 'CURRENCY_ID', 'DATE_CREATE', 'RESPONSIBLE_ID']
+        });
+        if (!result || !result.result) {
+            displayRestResult('\u0421\u043F\u0438\u0441\u043E\u043A \u0441\u0434\u0435\u043B\u043E\u043A', []);
+            return;
         }
-    });
+        displayRestResult('\u0421\u043F\u0438\u0441\u043E\u043A \u0441\u0434\u0435\u043B\u043E\u043A', result.result);
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
 
-    console.log('SDK \u0433\u043E\u0442\u043E\u0432 \u043A \u0440\u0430\u0431\u043E\u0442\u0435!', BX24.isAdmin());
-});
-<\/script>`], ["", `<div class="app astro-6d4s3iun">
-    <h2 class="astro-6d4s3iun">\u0421\u0440\u0430\u0432\u043D\u0435\u043D\u0438\u0435 API Bitrix24</h2>
+async function deleteDeal() {
+    try {
+        const dealId = prompt('\u0412\u0432\u0435\u0434\u0438\u0442\u0435 ID \u0441\u0434\u0435\u043B\u043A\u0438 \u0434\u043B\u044F \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u044F:');
+        if (!dealId) return;
+        const result = await callBitrixAPI('crm.deal.delete', {
+            id: dealId
+        });
+        displayRestResult('\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u0441\u0434\u0435\u043B\u043A\u0438', result);
+        await getDeals();
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
 
-    <div class="sdk-result astro-6d4s3iun">
-        <h3 class="astro-6d4s3iun">\u041F\u0440\u0438\u043C\u0435\u0440 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F SDK</h3>
-        <div id="sdkResult" class="astro-6d4s3iun"></div>
-    </div>
+async function deleteAllDeals() {
+    try {
+        const dealsResult = await callBitrixAPI('crm.deal.list', { select: ['ID'] });
+        const dealIds = dealsResult.result?.map(deal => deal.ID);
+        if (dealIds.length === 0) {
+            displayRestResult('\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u0441\u0434\u0435\u043B\u043E\u043A', '\u041D\u0435\u0442 \u0441\u0434\u0435\u043B\u043E\u043A \u0434\u043B\u044F \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u044F');
+            return;
+        }
+        const deletePromises = dealIds.map(dealId => 
+            callBitrixAPI('crm.deal.delete', { id: dealId })
+                .then(result => result.error ? null : dealId)
+                .catch(error => {
+                    console.error(\`\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u0438 \u0441\u0434\u0435\u043B\u043A\u0438 \${dealId}:\`, error);
+                    return null;
+                })
+        );
+        const results = await Promise.all(deletePromises);
+        const successCount = results.filter(id => id !== null).length;
+        displayRestResult('\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u0441\u0434\u0435\u043B\u043E\u043A', \`\u0423\u0441\u043F\u0435\u0448\u043D\u043E \u0443\u0434\u0430\u043B\u0435\u043D\u043E \${successCount} \u0438\u0437 \${dealIds.length} \u0441\u0434\u0435\u043B\u043E\u043A\`);
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
 
-    <div class="rest-result astro-6d4s3iun">
-        <h3 class="astro-6d4s3iun">\u041F\u0440\u0438\u043C\u0435\u0440 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F REST API</h3>
-        <div class="astro-6d4s3iun">
-            <button onclick="getProfile()" class="astro-6d4s3iun">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F</button>
-            <button onclick="getAppInfo()" class="astro-6d4s3iun">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0438</button>
+async function getChats() {
+    try {
+        const result = await callBitrixAPI('im.recent.list');
+        displayRestResult('\u0421\u043F\u0438\u0441\u043E\u043A \u0447\u0430\u0442\u043E\u0432', result);
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
+
+function initializeBitrixSDK() {
+    const script = document.createElement('script');
+    script.src = '//api.bitrix24.com/api/v1/';
+    script.async = true;
+    script.onload = function() {
+        BX24.init(function() {
+            BX24.callMethod('app.info', {}, function(res) {
+                if (res.error()) {
+                    console.error('\u041E\u0448\u0438\u0431\u043A\u0430 SDK:', res.error());
+                    } else {
+                    const sdkResult = document.getElementById('sdkResult');
+                    const data = res.data();
+                    sdkResult.innerHTML = \`
+                    <h4>\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0438 (SDK)</h4>
+                    <div>ID \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u044F: \${data.ID}</div>
+                    <div>\u041A\u043E\u0434: \${data.CODE}</div>
+                    <div>\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u043E: \${data.INSTALLED ? '\u0414\u0430' : '\u041D\u0435\u0442'}</div>
+                    <div>\u041B\u0438\u0446\u0435\u043D\u0437\u0438\u044F: \${data.LICENSE}</div>
+                    <div>\u0422\u0438\u043F \u043B\u0438\u0446\u0435\u043D\u0437\u0438\u0438: \${data.LICENSE_TYPE}</div>
+                    <div>\u0414\u043D\u0435\u0439 \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C: \${data.DAYS}</div>
+                    <div>\u0421\u0442\u0430\u0442\u0443\u0441: \${data.STATUS}</div>
+                    <div>\u0412\u0435\u0440\u0441\u0438\u044F: \${data.VERSION}</div>
+                \`;
+                    }
+                });
+            console.log('SDK \u0433\u043E\u0442\u043E\u0432 \u043A \u0440\u0430\u0431\u043E\u0442\u0435!', BX24.isAdmin());
+            });
+        };
+    document.head.appendChild(script);
+    }
+document.addEventListener('DOMContentLoaded', initializeBitrixSDK);
+<\/script>`], ["", `<div class="app">
+    <h1 class="text-center text-3xl font-bold">API Bitrix24 & SDK</h1>
+
+    <div class="flex flex-col gap-12">
+        <div class="m-5">
+            <h2 class="text-2xl mb-3">\u041F\u0440\u0438\u043C\u0435\u0440 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F REST API</h2>
+            <div class="grid grid-cols-3 gap-3 mb-12">
+                <div>
+                    <h3 class="text-2xl mb-3">\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u0438\u043D\u043E\u0444\u0440\u043C\u0430\u0446\u0438\u0438</h3>
+                    <div class="flex flex-col gap-3 items-start">
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getProfile()">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getAppInfo()">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0438</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="checkUserAccess()">\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C \u043F\u0440\u0430\u0432\u0430 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getAvailableMethods()">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B\u0435 \u043C\u0435\u0442\u043E\u0434\u044B</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getChats()">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0441\u043F\u0438\u0441\u043E\u043A \u0447\u0430\u0442\u043E\u0432</button>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl mb-3">\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u044F \u0441\u043E \u0441\u0434\u0435\u043B\u043A\u0430\u043C\u0438</h3>
+                    <div class="flex flex-col gap-3 items-start">
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="createDeal()">\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0441\u0434\u0435\u043B\u043A\u0443</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getDeals()">\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0441\u043F\u0438\u0441\u043E\u043A \u0441\u0434\u0435\u043B\u043E\u043A</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="deleteDeal()">\u0423\u0434\u0430\u043B\u0438\u0442\u044C \u0441\u0434\u0435\u043B\u043A\u0443</button>
+                        <button class="p-2 border rounded-sm border-gray-500 bg-red-300 font-bold cursor-pointer" onclick="deleteAllDeals()">\u0423\u0434\u0430\u043B\u0438\u0442\u044C \u0412\u0421\u0415 \u0441\u0434\u0435\u043B\u043A\u0438</button>
+                    </div>
+                </div>
+            </div>
+            <div id="restResult" class="result my-2.5 p-2.5 border rounded-sm border-gray-500 overflow-hidden"></div>
         </div>
-        <div id="restResult" class="result astro-6d4s3iun"></div>
+        <div class="m-5">
+            <h2 class="text-2xl">\u041F\u0440\u0438\u043C\u0435\u0440 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F SDK</h2>
+            <div id="sdkResult"></div>
+        </div>
     </div>
 </div>
 
 
-
-<!-- \u041F\u043E\u0434\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435 Bitrix24 SDK -->
 <script>
-// \u041F\u043E\u0434\u043A\u043B\u044E\u0447\u0430\u0435\u043C \u0432\u043D\u0435\u0448\u043D\u0438\u0439 \u0441\u043A\u0440\u0438\u043F\u0442
-const script = document.createElement('script');
-script.src = '//api.bitrix24.com/api/v1/';
-script.async = true;
-document.head.appendChild(script);
-
-// \u0424\u0443\u043D\u043A\u0446\u0438\u0438 \u0434\u043B\u044F REST API
 async function callBitrixAPI(method, params = {}) {
     try {
         const response = await fetch(\\\`https://b24-1aju79.bitrix24.ru/rest/1/u3dtj4pacn8odm62/\\\${method}\\\`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
-            body: new URLSearchParams(params)
+            body: JSON.stringify(params)
         });
-
         const result = await response.json();
         if (result.error) {
             throw new Error(result.error_description || result.error);
@@ -2026,11 +2147,7 @@ async function callBitrixAPI(method, params = {}) {
 
 function displayRestResult(title, data) {
     const restResult = document.getElementById('restResult');
-    if (Array.isArray(data)) {
-        restResult.innerHTML = \\\`<h4>\\\${title}</h4><pre>\\\${JSON.stringify(data, null, 2)}</pre>\\\`;
-    } else {
-        restResult.innerHTML = \\\`<h4>\\\${title}</h4><pre>\\\${JSON.stringify(data, null, 2)}</pre>\\\`;
-    }
+    restResult.innerHTML = \\\`<h4>\\\${title}</h4><pre>\\\${JSON.stringify(data, null, 2)}</pre>\\\`;
 }
 
 function displayRestError(message) {
@@ -2038,10 +2155,9 @@ function displayRestError(message) {
     restResult.innerHTML = \\\`<div style="color: red;">\u041E\u0448\u0438\u0431\u043A\u0430: \\\${message}</div>\\\`;
 }
 
-// \u041C\u0435\u0442\u043E\u0434\u044B REST API
 async function getProfile() {
     try {
-        const result = await callBitrixAPI('profile', {});
+        const result = await callBitrixAPI('profile');
         displayRestResult('\u041F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F', result.result);
     } catch (error) {
         displayRestError(error.message);
@@ -2050,38 +2166,146 @@ async function getProfile() {
 
 async function getAppInfo() {
     try {
-        const result = await callBitrixAPI('app.info', {});
+        const result = await callBitrixAPI('app.info');
         displayRestResult('\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0438', result.result);
     } catch (error) {
         displayRestError(error.message);
     }
 }
 
-// \u0418\u043D\u0438\u0446\u0438\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u044F SDK
-BX24.init(function(){
-    // \u041F\u0440\u0438\u043C\u0435\u0440 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F SDK
-    BX24.callMethod('app.info', {}, function(res){
-        if (res.error()) {
-            console.error('\u041E\u0448\u0438\u0431\u043A\u0430 SDK:', res.error());
-        } else {
-            const sdkResult = document.getElementById('sdkResult');
-            const data = res.data();
-            sdkResult.innerHTML = \\\`
-                <h4>\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0438 (SDK)</h4>
-                <div>ID \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u044F: \\\${data.ID}</div>
-                <div>\u041A\u043E\u0434: \\\${data.CODE}</div>
-                <div>\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u043E: \\\${data.INSTALLED ? '\u0414\u0430' : '\u041D\u0435\u0442'}</div>
-                <div>\u041B\u0438\u0446\u0435\u043D\u0437\u0438\u044F: \\\${data.LICENSE}</div>
-                <div>\u0422\u0438\u043F \u043B\u0438\u0446\u0435\u043D\u0437\u0438\u0438: \\\${data.LICENSE_TYPE}</div>
-                <div>\u0414\u043D\u0435\u0439 \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C: \\\${data.DAYS}</div>
-                <div>\u0421\u0442\u0430\u0442\u0443\u0441: \\\${data.STATUS}</div>
-                <div>\u0412\u0435\u0440\u0441\u0438\u044F: \\\${data.VERSION}</div>
-            \\\`;
-        }
-    });
+async function checkUserAccess() {
+    try {
+        const adminResult = await callBitrixAPI('user.admin');
+        const accessResult = await callBitrixAPI('user.access');
+        const result = {
+            isAdmin: adminResult.result,
+            hasAccess: accessResult.result
+        };
+        displayRestResult('\u041F\u0440\u0430\u0432\u0430 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F', result);
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
 
-    console.log('SDK \u0433\u043E\u0442\u043E\u0432 \u043A \u0440\u0430\u0431\u043E\u0442\u0435!', BX24.isAdmin());
-});
+async function getAvailableMethods() {
+    try {
+        const result = await callBitrixAPI('methods');
+        displayRestResult('\u0414\u043E\u0441\u0442\u0443\u043F\u043D\u044B\u0435 \u043C\u0435\u0442\u043E\u0434\u044B', result.result);
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
+
+
+async function createDeal() {
+    try {
+        const dealParams = {
+            fields: {
+                TITLE: '\u041D\u043E\u0432\u0430\u044F \u0441\u0434\u0435\u043B\u043A\u0430',
+                STAGE_ID: 'NEW',
+                OPPORTUNITY: 10000,
+                CURRENCY_ID: 'RUB'
+            }
+        };
+        const result = await callBitrixAPI('crm.deal.add', dealParams);
+        displayRestResult('\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0441\u0434\u0435\u043B\u043A\u0438', result);
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
+async function getDeals() {
+    try {
+        const result = await callBitrixAPI('crm.deal.list', {
+            select: ['ID', 'TITLE', 'STAGE_ID', 'OPPORTUNITY', 'CURRENCY_ID', 'DATE_CREATE', 'RESPONSIBLE_ID']
+        });
+        if (!result || !result.result) {
+            displayRestResult('\u0421\u043F\u0438\u0441\u043E\u043A \u0441\u0434\u0435\u043B\u043E\u043A', []);
+            return;
+        }
+        displayRestResult('\u0421\u043F\u0438\u0441\u043E\u043A \u0441\u0434\u0435\u043B\u043E\u043A', result.result);
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
+
+async function deleteDeal() {
+    try {
+        const dealId = prompt('\u0412\u0432\u0435\u0434\u0438\u0442\u0435 ID \u0441\u0434\u0435\u043B\u043A\u0438 \u0434\u043B\u044F \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u044F:');
+        if (!dealId) return;
+        const result = await callBitrixAPI('crm.deal.delete', {
+            id: dealId
+        });
+        displayRestResult('\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u0441\u0434\u0435\u043B\u043A\u0438', result);
+        await getDeals();
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
+
+async function deleteAllDeals() {
+    try {
+        const dealsResult = await callBitrixAPI('crm.deal.list', { select: ['ID'] });
+        const dealIds = dealsResult.result?.map(deal => deal.ID);
+        if (dealIds.length === 0) {
+            displayRestResult('\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u0441\u0434\u0435\u043B\u043E\u043A', '\u041D\u0435\u0442 \u0441\u0434\u0435\u043B\u043E\u043A \u0434\u043B\u044F \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u044F');
+            return;
+        }
+        const deletePromises = dealIds.map(dealId => 
+            callBitrixAPI('crm.deal.delete', { id: dealId })
+                .then(result => result.error ? null : dealId)
+                .catch(error => {
+                    console.error(\\\`\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u0438 \u0441\u0434\u0435\u043B\u043A\u0438 \\\${dealId}:\\\`, error);
+                    return null;
+                })
+        );
+        const results = await Promise.all(deletePromises);
+        const successCount = results.filter(id => id !== null).length;
+        displayRestResult('\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u0441\u0434\u0435\u043B\u043E\u043A', \\\`\u0423\u0441\u043F\u0435\u0448\u043D\u043E \u0443\u0434\u0430\u043B\u0435\u043D\u043E \\\${successCount} \u0438\u0437 \\\${dealIds.length} \u0441\u0434\u0435\u043B\u043E\u043A\\\`);
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
+
+async function getChats() {
+    try {
+        const result = await callBitrixAPI('im.recent.list');
+        displayRestResult('\u0421\u043F\u0438\u0441\u043E\u043A \u0447\u0430\u0442\u043E\u0432', result);
+    } catch (error) {
+        displayRestError(error.message);
+    }
+}
+
+function initializeBitrixSDK() {
+    const script = document.createElement('script');
+    script.src = '//api.bitrix24.com/api/v1/';
+    script.async = true;
+    script.onload = function() {
+        BX24.init(function() {
+            BX24.callMethod('app.info', {}, function(res) {
+                if (res.error()) {
+                    console.error('\u041E\u0448\u0438\u0431\u043A\u0430 SDK:', res.error());
+                    } else {
+                    const sdkResult = document.getElementById('sdkResult');
+                    const data = res.data();
+                    sdkResult.innerHTML = \\\`
+                    <h4>\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0438 (SDK)</h4>
+                    <div>ID \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u044F: \\\${data.ID}</div>
+                    <div>\u041A\u043E\u0434: \\\${data.CODE}</div>
+                    <div>\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u043E: \\\${data.INSTALLED ? '\u0414\u0430' : '\u041D\u0435\u0442'}</div>
+                    <div>\u041B\u0438\u0446\u0435\u043D\u0437\u0438\u044F: \\\${data.LICENSE}</div>
+                    <div>\u0422\u0438\u043F \u043B\u0438\u0446\u0435\u043D\u0437\u0438\u0438: \\\${data.LICENSE_TYPE}</div>
+                    <div>\u0414\u043D\u0435\u0439 \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C: \\\${data.DAYS}</div>
+                    <div>\u0421\u0442\u0430\u0442\u0443\u0441: \\\${data.STATUS}</div>
+                    <div>\u0412\u0435\u0440\u0441\u0438\u044F: \\\${data.VERSION}</div>
+                \\\`;
+                    }
+                });
+            console.log('SDK \u0433\u043E\u0442\u043E\u0432 \u043A \u0440\u0430\u0431\u043E\u0442\u0435!', BX24.isAdmin());
+            });
+        };
+    document.head.appendChild(script);
+    }
+document.addEventListener('DOMContentLoaded', initializeBitrixSDK);
 <\/script>`])), maybeRenderHead());
 }, "C:/Users/iv/PhpstormProjects/bitrix24-rest/src/components/bitrix-app/index.astro", void 0);
 
@@ -2276,7 +2500,7 @@ function deserializeManifest(serializedManifest) {
   };
 }
 
-const manifest = deserializeManifest({"hrefRoot":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/","cacheDir":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/node_modules/.astro/","outDir":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/","srcDir":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/src/","publicDir":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/public/","buildClientDir":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/client/","buildServerDir":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/server/","adapterName":"","routes":[{"file":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/install/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/install","isIndex":false,"type":"page","pattern":"^\\/install\\/?$","segments":[[{"content":"install","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/install.astro","pathname":"/install","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/manifest/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/manifest","isIndex":false,"type":"page","pattern":"^\\/manifest\\/?$","segments":[[{"content":"manifest","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/manifest.astro","pathname":"/manifest","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/","isIndex":true,"type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}}],"base":"/","trailingSlash":"ignore","compressHTML":false,"componentMetadata":[["C:/Users/iv/PhpstormProjects/bitrix24-rest/src/pages/index.astro",{"propagation":"none","containsHead":true}],["C:/Users/iv/PhpstormProjects/bitrix24-rest/src/pages/manifest.astro",{"propagation":"none","containsHead":true}],["C:/Users/iv/PhpstormProjects/bitrix24-rest/src/pages/install.astro",{"propagation":"none","containsHead":true}]],"renderers":[],"clientDirectives":[["idle","(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value==\"object\"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};\"requestIdleCallback\"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event(\"astro:idle\"));})();"],["load","(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event(\"astro:load\"));})();"],["media","(()=>{var n=(a,t)=>{let i=async()=>{await(await a())()};if(t.value){let e=matchMedia(t.value);e.matches?i():e.addEventListener(\"change\",i,{once:!0})}};(self.Astro||(self.Astro={})).media=n;window.dispatchEvent(new Event(\"astro:media\"));})();"],["only","(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event(\"astro:only\"));})();"],["visible","(()=>{var a=(s,i,o)=>{let r=async()=>{await(await s())()},t=typeof i.value==\"object\"?i.value:void 0,c={rootMargin:t==null?void 0:t.rootMargin},n=new IntersectionObserver(e=>{for(let l of e)if(l.isIntersecting){n.disconnect(),r();break}},c);for(let e of o.children)n.observe(e)};(self.Astro||(self.Astro={})).visible=a;window.dispatchEvent(new Event(\"astro:visible\"));})();"]],"entryModules":{"\u0000@astro-renderers":"renderers.mjs","\u0000noop-middleware":"_noop-middleware.mjs","\u0000noop-actions":"_noop-actions.mjs","\u0000@astro-page:src/pages/install@_@astro":"pages/install.astro.mjs","\u0000@astro-page:src/pages/manifest@_@astro":"pages/manifest.astro.mjs","\u0000@astro-page:src/pages/index@_@astro":"pages/index.astro.mjs","\u0000@astrojs-manifest":"manifest_CbgiQlxv.mjs","astro:scripts/page.js":"_astro/app.js","astro:scripts/before-hydration.js":""},"inlinedScripts":[],"assets":["/_astro/app.js","/file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/install/index.html","/file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/manifest/index.html","/file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/index.html"],"buildFormat":"directory","checkOrigin":false,"serverIslandNameMap":[],"key":"ew2A6FctL3HGMq2jKfzXtGggOYUh+SpjtjqYAd9KMcA="});
+const manifest = deserializeManifest({"hrefRoot":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/","cacheDir":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/node_modules/.astro/","outDir":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/","srcDir":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/src/","publicDir":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/public/","buildClientDir":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/client/","buildServerDir":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/server/","adapterName":"","routes":[{"file":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/install/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/install","isIndex":false,"type":"page","pattern":"^\\/install\\/?$","segments":[[{"content":"install","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/install.astro","pathname":"/install","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/manifest/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/manifest","isIndex":false,"type":"page","pattern":"^\\/manifest\\/?$","segments":[[{"content":"manifest","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/manifest.astro","pathname":"/manifest","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/","isIndex":true,"type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}}],"base":"/","trailingSlash":"ignore","compressHTML":false,"componentMetadata":[["C:/Users/iv/PhpstormProjects/bitrix24-rest/src/pages/index.astro",{"propagation":"none","containsHead":true}],["C:/Users/iv/PhpstormProjects/bitrix24-rest/src/pages/manifest.astro",{"propagation":"none","containsHead":true}],["C:/Users/iv/PhpstormProjects/bitrix24-rest/src/pages/install.astro",{"propagation":"none","containsHead":true}]],"renderers":[],"clientDirectives":[["idle","(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value==\"object\"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};\"requestIdleCallback\"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event(\"astro:idle\"));})();"],["load","(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event(\"astro:load\"));})();"],["media","(()=>{var n=(a,t)=>{let i=async()=>{await(await a())()};if(t.value){let e=matchMedia(t.value);e.matches?i():e.addEventListener(\"change\",i,{once:!0})}};(self.Astro||(self.Astro={})).media=n;window.dispatchEvent(new Event(\"astro:media\"));})();"],["only","(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event(\"astro:only\"));})();"],["visible","(()=>{var a=(s,i,o)=>{let r=async()=>{await(await s())()},t=typeof i.value==\"object\"?i.value:void 0,c={rootMargin:t==null?void 0:t.rootMargin},n=new IntersectionObserver(e=>{for(let l of e)if(l.isIntersecting){n.disconnect(),r();break}},c);for(let e of o.children)n.observe(e)};(self.Astro||(self.Astro={})).visible=a;window.dispatchEvent(new Event(\"astro:visible\"));})();"]],"entryModules":{"\u0000@astro-renderers":"renderers.mjs","\u0000noop-middleware":"_noop-middleware.mjs","\u0000noop-actions":"_noop-actions.mjs","\u0000@astro-page:src/pages/install@_@astro":"pages/install.astro.mjs","\u0000@astro-page:src/pages/manifest@_@astro":"pages/manifest.astro.mjs","\u0000@astro-page:src/pages/index@_@astro":"pages/index.astro.mjs","\u0000@astrojs-manifest":"manifest_Dm96QvfW.mjs","astro:scripts/page.js":"_astro/app.js","astro:scripts/before-hydration.js":""},"inlinedScripts":[],"assets":["/_astro/app.js","/file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/install/index.html","/file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/manifest/index.html","/file:///C:/Users/iv/PhpstormProjects/bitrix24-rest/dist/index.html"],"buildFormat":"directory","checkOrigin":false,"serverIslandNameMap":[],"key":"YlLYuxK1XhSdh7/h8L6IR7bqeALmRGuxQ68I+e7JEBk="});
 if (manifest.sessionConfig) manifest.sessionConfig.driverModule = null;
 
 export { page$1 as a, page as b, manifest as m, onRequest as o, page$2 as p, renderers, server as s };
