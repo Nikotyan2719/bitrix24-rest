@@ -1,240 +1,306 @@
 ---
-const BITRIX24_WEBHOOK = 'https://b24-1aju79.bitrix24.ru/rest/1/u3dtj4pacn8odm62/';
+const example = JSON.stringify({ "name": "api.info" });
 ---
 
-<div class="app">
-    <h1 class="text-center text-3xl font-bold">API Bitrix24 & SDK</h1>
-
+<div x-data="bitrixApp" class="app">
+    <h1 class="text-center text-3xl font-bold">API Bitrix24</h1>
     <div class="flex flex-col gap-12">
         <div class="m-5">
             <h2 class="text-2xl mb-3">Пример использования REST API</h2>
-            <div class="grid grid-cols-3 gap-3 mb-12">
+            <div class="grid grid-cols-4 gap-3 mb-12">
                 <div>
-                    <h3 class="text-2xl mb-3">Получение инофрмации</h3>
+                    <h3 class="text-2xl mb-3">Получение информации</h3>
                     <div class="flex flex-col gap-3 items-start">
-                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getProfile()">Получить профиль пользователя</button>
-                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getAppInfo()">Получить информацию о приложении</button>
-                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="checkUserAccess()">Проверить права пользователя</button>
-                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getAvailableMethods()">Получить доступные методы</button>
-                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getChats()">Получить список чатов</button>
-                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="addBlogPost()">Добавить сообщение в блог</button>
+                        <button @click="getProfile" class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer">Получить профиль пользователя</button>
+                        <button @click="getAppInfo" class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer">Получить информацию о приложении</button>
+                        <button @click="checkUserAccess" class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer">Проверить права пользователя</button>
+                        <button @click="getChats" class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer">Получить список чатов</button>
+                        <button @click="getAvailableMethods" class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer">Получить доступные методы</button>
                     </div>
                 </div>
                 <div>
                     <h3 class="text-2xl mb-3">Действия со сделками</h3>
                     <div class="flex flex-col gap-3 items-start">
-                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="createDeal()">Создать сделку</button>
-                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="getDeals()">Получить список сделок</button>
-                        <button class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer" onclick="deleteDeal()">Удалить сделку</button>
-                        <button class="p-2 border rounded-sm border-gray-500 bg-red-300 font-bold cursor-pointer" onclick="deleteAllDeals()">Удалить ВСЕ сделки</button>
+                        <button @click="createDeal" class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer">Создать сделку</button>
+                        <button @click="getDeals" class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer">Получить список сделок</button>
+                        <button @click="deleteDeal" class="p-2 border rounded-sm border-gray-500 bg-red-300 font-bold cursor-pointer">Удалить сделку</button>
+                        <button @click="deleteAllDeals" class="p-2 border rounded-sm border-gray-500 bg-red-300 font-bold cursor-pointer">Удалить ВСЕ сделки</button>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl mb-3">Действия с календарем</h3>
+                    <div class="flex flex-col gap-3 items-start">
+                        <button @click="createCalendarSection" class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer">Создать новый календарь</button>
+                        <button @click="deleteCalendarSection" class="p-2 border rounded-sm border-gray-500 bg-red-300 font-bold cursor-pointer">Удалить календарь</button>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl mb-3">Действия с лентой</h3>
+                    <div class="flex flex-col gap-3 items-start">
+                        <button @click="addBlogPost" class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer">Добавить сообщение в блог</button>
+                        <button @click="getBlogPost" class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer">Получить все сообщения в блоге</button>
+                        <button @click="postCommentPost" class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer">Добавить комментарий к сообщению в блоге</button>
+                        <button @click="deleteBlogPost" class="p-2 border rounded-sm border-gray-500 bg-red-300 font-bold cursor-pointer">Удалить сообщение в блогe</button>
                     </div>
                 </div>
             </div>
-            <div id="restResult" class="result my-2.5 p-2.5 border rounded-sm border-gray-500 overflow-hidden"></div>
-        </div>
-        <div class="m-5">
-            <h2 class="text-2xl">Пример использования SDK</h2>
-            <div id="sdkResult"></div>
+            <div class="grid grid-cols-3 gap-12 items-start">
+                <div x-ref="restResult" class="result col-span-2 my-2.5 p-2.5 border rounded-sm border-gray-500 overflow-x-auto"></div>
+                <div class="mb-12 flex justify-center">
+                    <div class="grid grid-cols-2 gap-3 w-full grow-0">
+                        <h3 class="col-span-2 text-2xl text-center">Вручную указать метод</h3>
+                        <div class="flex flex-col">
+                            <label for="method">Метод</label>
+                            <input id="method" x-model="method" type="text" class="p-2 border rounded-sm border-gray-500"/>
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="params">Параметры</label>
+                            <textarea id="params" x-model="params" rows="1" class="p-2 border rounded-sm border-gray-500"/>
+                        </div>
+                        <button @click="sendRequest" class="p-2 border rounded-sm border-gray-500 bg-blue-300 font-bold cursor-pointer col-span-2">Подтвердить</button>
+                        <div class="col-span-2 text-blue-400">
+                            <p>Например <span class="text-blue-600">method.get</span> - <span class="text-blue-600">{example}</span></p>
+                            <p>Пример параметров: <a class="underline text-red-300" target="_blank" href="https://apidocs.bitrix24.ru/api-reference/crm/deals/crm-deal-add.html">https://apidocs.bitrix24.ru/api-reference/crm/deals/crm-deal-add.html</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
+<script>
+  import api from "../../../api/rest/rest";
 
-<script is:inline>
-async function callBitrixAPI(method, params = {}) {
-    try {
-        const response = await fetch(`https://b24-1aju79.bitrix24.ru/rest/1/u3dtj4pacn8odm62/${method}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(params)
-        });
-        const result = await response.json();
-        if (result.error) {
-            throw new Error(result.error_description || result.error);
+  document.addEventListener("alpine:init", () => {
+    window.Alpine.data("bitrixApp", () => ({
+      api,
+      title: "",
+      method: "",
+      params: "",
+      result: null,
+      error: null as any,
+
+      displayRestResult(title: string, data: any) {
+        this.title = title;
+        this.result = data;
+        this.$refs.restResult.innerHTML = `<h4>${title}</h4><pre>${JSON.stringify(data, null, 2)}</pre>`;
+      },
+
+      displayRestError(message: string) {
+        this.error = message;
+        this.$refs.restResult.innerHTML = `<div style="color: red;">Ошибка: ${message}</div>`;
+      },
+
+      async sendRequest() {
+        try {
+          const params = this.params && this.params.trim() ? JSON.parse(this.params) : undefined;
+          const result = await this.api.callApi(this.method, params );
+          this.displayRestResult("Результат", result);
+        } catch (error: any) {
+          this.displayRestError(error.message);
         }
-        return result;
-    } catch (error) {
-        console.error('Ошибка REST API:', error);
-        throw error;
-    }
-}
+      },
 
-function displayRestResult(title, data) {
-    const restResult = document.getElementById('restResult');
-    restResult.innerHTML = `<h4>${title}</h4><pre>${JSON.stringify(data, null, 2)}</pre>`;
-}
+      async getProfile() {
+        try {
+          const result = await this.api.getProfile();
+          this.displayRestResult("Профиль пользователя", result);
+        } catch (error: any) {
+          this.displayRestError(error.message);
+        }
+      },
 
-function displayRestError(message) {
-    const restResult = document.getElementById('restResult');
-    restResult.innerHTML = `<div style="color: red;">Ошибка: ${message}</div>`;
-}
+      async getAppInfo() {
+        try {
+          const result = await this.api.getAppInfo();
+          this.displayRestResult("Информация о приложении", result);
+        } catch (error: any) {
+          this.displayRestError(error.message);
+        }
+      },
 
-async function getProfile() {
-    try {
-        const result = await callBitrixAPI('profile');
-        displayRestResult('Профиль пользователя', result.result);
-    } catch (error) {
-        displayRestError(error.message);
-    }
-}
+      async checkUserAccess() {
+        try {
+          const adminResult = await this.api.getAdminInfo();
+          const accessResult = await this.api.getAccessInfo();
+          const result = {
+            isAdmin: adminResult,
+            hasAccess: accessResult,
+          };
+          this.displayRestResult("Права пользователя", result);
+        } catch (error: any) {
+          this.displayRestError(error.message);
+        }
+      },
 
-async function getAppInfo() {
-    try {
-        const result = await callBitrixAPI('app.info');
-        displayRestResult('Информация о приложении', result.result);
-    } catch (error) {
-        displayRestError(error.message);
-    }
-}
+      async addBlogPost() {
+        try {
+          const params = {
+            POST_TITLE: "Заголовок",
+            POST_MESSAGE: "Текст",
+          };
+          const result = await this.api.postBlogPost(params);
+          this.displayRestResult("Результат добавления сообщения", result);
+        } catch (error: any) {
+          this.displayRestError(error.message);
+        }
+      },
 
-async function checkUserAccess() {
-    try {
-        const adminResult = await callBitrixAPI('user.admin');
-        const accessResult = await callBitrixAPI('user.access');
-        const result = {
-            isAdmin: adminResult.result,
-            hasAccess: accessResult.result
-        };
-        displayRestResult('Права пользователя', result);
-    } catch (error) {
-        displayRestError(error.message);
-    }
-}
+      async getAvailableMethods() {
+        try {
+          const result = await this.api.getAvailableMethods();
+          this.displayRestResult("Доступные методы", result);
+        } catch (error: any) {
+          this.displayRestError(error.message);
+        }
+      },
 
-async function addBlogPost() {
-    try {
-        const params = {
-            POST_TITLE: 'Заголовок',
-            POST_MESSAGE: 'Текст',
-            DEST: ['SG1', 'U2']
-        };
-        const result = await callBitrixAPI('log.blogpost.add', params);
-        displayRestResult('Результат добавления сообщения', result);
-    } catch (error) {
-        displayRestError(error.message);
-    }
-}
-
-async function getAvailableMethods() {
-    try {
-        const result = await callBitrixAPI('methods');
-        displayRestResult('Доступные методы', result.result);
-    } catch (error) {
-        displayRestError(error.message);
-    }
-}
-
-
-async function createDeal() {
-    try {
-        const dealParams = {
+      async createDeal() {
+        try {
+          const params = {
             fields: {
-                TITLE: 'Новая сделка',
-                STAGE_ID: 'NEW',
-                OPPORTUNITY: 10000,
-                CURRENCY_ID: 'RUB'
-            }
-        };
-        const result = await callBitrixAPI('crm.deal.add', dealParams);
-        displayRestResult('Создание сделки', result);
-    } catch (error) {
-        displayRestError(error.message);
-    }
-}
-async function getDeals() {
-    try {
-        const result = await callBitrixAPI('crm.deal.list', {
-            select: ['ID', 'TITLE', 'STAGE_ID', 'OPPORTUNITY', 'CURRENCY_ID', 'DATE_CREATE', 'RESPONSIBLE_ID']
-        });
-        if (!result || !result.result) {
-            displayRestResult('Список сделок', []);
-            return;
+              TITLE: "Новая сделка",
+              STAGE_ID: "NEW",
+              OPPORTUNITY: 10000,
+              CURRENCY_ID: "RUB",
+            },
+          };
+          const result = await this.api.postDeal(params);
+          this.displayRestResult("Создание сделки", result);
+        } catch (error: any) {
+          this.displayRestError(error.message);
         }
-        displayRestResult('Список сделок', result.result);
-    } catch (error) {
-        displayRestError(error.message);
-    }
-}
+      },
 
-async function deleteDeal() {
-    try {
-        const dealId = prompt('Введите ID сделки для удаления:');
-        if (!dealId) return;
-        const result = await callBitrixAPI('crm.deal.delete', {
-            id: dealId
-        });
-        displayRestResult('Удаление сделки', result);
-        await getDeals();
-    } catch (error) {
-        displayRestError(error.message);
-    }
-}
-
-async function deleteAllDeals() {
-    try {
-        const dealsResult = await callBitrixAPI('crm.deal.list', { select: ['ID'] });
-        const dealIds = dealsResult.result?.map(deal => deal.ID);
-        if (dealIds.length === 0) {
-            displayRestResult('Удаление сделок', 'Нет сделок для удаления');
+      async getDeals() {
+        try {
+          const params = {
+            select: ["ID", "TITLE", "STAGE_ID", "OPPORTUNITY", "CURRENCY_ID", "DATE_CREATE", "RESPONSIBLE_ID"],
+          };
+          const result = await this.api.getDeals(params);
+          if (!result) {
+            this.displayRestResult("Список сделок пуст", []);
             return;
+          }
+          this.displayRestResult("Список сделок", result);
+        } catch (error: any) {
+          this.displayRestError(error.message);
         }
-        const deletePromises = dealIds.map(dealId => 
-            callBitrixAPI('crm.deal.delete', { id: dealId })
-                .then(result => result.error ? null : dealId)
-                .catch(error => {
-                    console.error(`Ошибка при удалении сделки ${dealId}:`, error);
-                    return null;
-                })
-        );
-        const results = await Promise.all(deletePromises);
-        const successCount = results.filter(id => id !== null).length;
-        displayRestResult('Удаление сделок', `Успешно удалено ${successCount} из ${dealIds.length} сделок`);
-    } catch (error) {
-        displayRestError(error.message);
-    }
-}
+      },
 
-async function getChats() {
-    try {
-        const result = await callBitrixAPI('im.recent.list');
-        displayRestResult('Список чатов', result);
-    } catch (error) {
-        displayRestError(error.message);
-    }
-}
+      async deleteDeal() {
+        try {
+          const dealId = prompt("Введите ID сделки для удаления:");
+          if (!dealId) return;
+          const result = await this.api.deleteDeal(parseInt(dealId));
+          this.displayRestResult("Удаление сделки", result);
+          await this.getDeals();
+        } catch (error: any) {
+          this.displayRestError(error.message);
+        }
+      },
 
-function initializeBitrixSDK() {
-    const script = document.createElement('script');
-    script.src = '//api.bitrix24.com/api/v1/';
-    script.async = true;
-    script.onload = function() {
-        BX24.init(function() {
-            BX24.callMethod('app.info', {}, function(res) {
-                if (res.error()) {
-                    console.error('Ошибка SDK:', res.error());
-                    } else {
-                    const sdkResult = document.getElementById('sdkResult');
-                    const data = res.data();
-                    sdkResult.innerHTML = `
-                    <h4>Информация о приложении (SDK)</h4>
-                    <div>ID приложения: ${data.ID}</div>
-                    <div>Код: ${data.CODE}</div>
-                    <div>Установлено: ${data.INSTALLED ? 'Да' : 'Нет'}</div>
-                    <div>Лицензия: ${data.LICENSE}</div>
-                    <div>Тип лицензии: ${data.LICENSE_TYPE}</div>
-                    <div>Дней осталось: ${data.DAYS}</div>
-                    <div>Статус: ${data.STATUS}</div>
-                    <div>Версия: ${data.VERSION}</div>
-                `;
-                    }
-                });
-            console.log('SDK готов к работе!', BX24.isAdmin());
-            });
-        };
-    document.head.appendChild(script);
-    }
-document.addEventListener('DOMContentLoaded', initializeBitrixSDK);
+      async deleteAllDeals() {
+        try {
+          const results = await this.api.deleteAllDeals();
+          this.displayRestResult("Удаление сделок", {
+            message: `Успешно удалено ${results.filter((id) => id !== null).length} из ${results.length} сделок`,
+          });
+        } catch (error: any) {
+          this.displayRestError(error.message);
+        }
+      },
+
+      async postCommentPost() {
+        try {
+          const postId = prompt("Введите ID поста:");
+          if (!postId) return;
+          const message = prompt("Введите текст комментария:");
+          if (!message) return;
+          const params = {
+            POST_ID: parseInt(postId),
+            TEXT: message,
+          };
+          const result = await this.api.postComment(params);
+          this.displayRestResult("Сообщение добавленно", result);
+        } catch (error: any) {
+          this.displayRestError(error.message);
+        }
+      },
+
+      async getBlogPost() {
+        try {
+          const result = await this.api.getPosts();
+          this.displayRestResult("Все сообщения в блоге:", result);
+        } catch (error: any) {
+          this.displayRestError(error.message);
+        }
+      },
+
+      async deleteBlogPost() {
+        try {
+          const postId = prompt("Введите ID сделки для удаления:");
+          if (!postId) return;
+          const result = await this.api.deletePost(parseInt(postId));
+          this.displayRestResult("Удаление поста", result);
+        } catch (error: any) {
+          this.displayRestError(error.message);
+        }
+      },
+
+      async createCalendarSection() {
+        try {
+          const profileResult = await this.api.getProfile();
+          const ownerId = profileResult.ID;
+          const params = {
+            type: "user",
+            ownerId: ownerId,
+            name: "Новый календарь",
+            description: "Мой новый календарь",
+            color: "#9cbeee",
+            text_color: "#283000",
+            export: {
+              ALLOW: false,
+              SET: "3_9",
+            },
+          };
+          const result = await this.api.postCalendar(params);
+          this.displayRestResult("Результат создания календаря", {
+            id: result,
+            message: "Календарь успешно создан",
+          });
+        } catch (error: any) {
+          this.displayRestError(error.message);
+        }
+      },
+
+      async deleteCalendarSection() {
+        try {
+          const calendarId = prompt("Введите ID календаря для удаления:");
+          if (!calendarId) return;
+          const profileResult = await this.api.getProfile();
+          const params = {
+            type: "user",
+            ownerId: profileResult.ID,
+            id: parseInt(calendarId),
+          };
+          await this.api.deleteCalendar(params);
+          this.displayRestResult("Результат удаления календаря", { message: "Календарь успешно удален" });
+        } catch (error: any) {
+          this.displayRestError(error.message);
+        }
+      },
+
+      async getChats() {
+        try {
+          const result = await this.api.getChats();
+          this.displayRestResult("Список чатов", result);
+        } catch (error: any) {
+          this.displayRestError(error.message);
+        }
+      },
+
+    }));
+  });
 </script>
